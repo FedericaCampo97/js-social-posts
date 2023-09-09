@@ -57,7 +57,13 @@ const posts = [
 ];
 
 
-
+function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
 
 posts.forEach(element => {
     let idPost = element.id
@@ -90,6 +96,7 @@ posts.forEach(element => {
 
     let datePublication = document.createElement('div')
     datePublication.className = 'post-meta__data'
+ 
     postMeta.appendChild(datePublication)
 
     let author = document.createElement('div')
@@ -99,7 +106,10 @@ posts.forEach(element => {
 
     let time = document.createElement('div')
     time.className = 'post-meta__time'
-    time.append(dateCreated)
+    let now = new Date()
+    let date2 = new Date(dateCreated)
+    let months = monthDiff(date2 , now)
+    time.append(months + ' mesi fa')
     datePublication.appendChild(time)
 
     let text = document.createElement('div')
