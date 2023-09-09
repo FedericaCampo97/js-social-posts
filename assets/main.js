@@ -117,7 +117,45 @@ posts.forEach(element => {
 
     let postFooter = document.createElement('div')
     postFooter.className = 'post__footer'
-    postMeta.appendChild(postFooter)
+    post.appendChild(postFooter)
+
+    let likeJs = document.createElement('div')
+    likeJs.className = 'likes js-likes'
+    postFooter.appendChild(likeJs)
+ 
+    let likesCta = document.createElement('div')
+    likesCta.className = 'likes__cta'
+    likeJs.appendChild(likesCta)
+
+    let likeButton = document.createElement('div')
+    likeButton.className = 'like-button  js-like-button'
+    likesCta.appendChild(likeButton)
+
+    let likeButtonIcon = document.createElement('i')
+    likeButtonIcon.className = 'like-button__icon fas fa-thumbs-up'
+    likeButton.appendChild(likeButtonIcon)
+
+    let likeButtonLable = document.createElement('span')
+    likeButtonLable.className = 'like-button__label'
+    likeButtonLable.append('Mi Piace')
+    likeButton.appendChild(likeButtonLable)
+
+    let jsLikeCounter = document.createElement('b')
+    jsLikeCounter.className = 'js-likes-counter'
+    jsLikeCounter.append(numberLikes)
+
+    let likeCounter = document.createElement('div')
+    likeCounter.className = 'likes__counter'
+    likeCounter.append('piace a ')
+    likeCounter.appendChild(jsLikeCounter)
+    likeCounter.append(' persone')
+    
+    likeJs.appendChild(likeCounter)
+
+    
+
+
+
     
 
 
