@@ -70,6 +70,32 @@ posts.forEach(element => {
 
     let post = document.createElement('div')
     post.className = "post"
-    console.log(post)
+    
+    let header = document.createElement('div')
+    header.className = 'post__header'
+    post.appendChild(header)
+    
+    let postMeta = document.createElement('div')
+    postMeta.className = 'post-meta'
+    header.appendChild(postMeta)
+    
+    let postIcon = document.createElement('div')
+    postIcon.className = 'post-meta__icon'
+    postMeta.appendChild(postIcon)
+
+    let profilePhoto = document.createElement('img')
+    profilePhoto.className = 'profile-pic'
+    profilePhoto.src = authorImage
+    postIcon.appendChild(profilePhoto)
+
+    let datepublication = document.createElement('div')
+    dateCreated.className = 'post-meta__data'
+    postMeta.appendChild(dateCreated)
+
+    
+
+    let container = document.getElementById('container')
+    container.appendChild(post)
+    
 
 })
