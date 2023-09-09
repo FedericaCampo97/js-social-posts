@@ -88,11 +88,38 @@ posts.forEach(element => {
     profilePhoto.src = authorImage
     postIcon.appendChild(profilePhoto)
 
-    let datepublication = document.createElement('div')
-    dateCreated.className = 'post-meta__data'
-    postMeta.appendChild(dateCreated)
+    let datePublication = document.createElement('div')
+    datePublication.className = 'post-meta__data'
+    postMeta.appendChild(datePublication)
 
+    let author = document.createElement('div')
+    author.className = 'post-meta__author'
+    author.append(authorName)
+    datePublication.appendChild(author)
+
+    let time = document.createElement('div')
+    time.className = 'post-meta__time'
+    time.append(dateCreated)
+    datePublication.appendChild(time)
+
+    let text = document.createElement('div')
+    text.className = 'post__text'
+    text.append(postText)
+    header.appendChild(text)
+
+    let imagePost = document.createElement('div')
+    imagePost.className = 'post__image'
+    header.appendChild(imagePost)
+
+    let image = document.createElement('img')
+    image.src = postMedia
+    imagePost.appendChild(image)
+
+    let postFooter = document.createElement('div')
+    postFooter.className = 'post__footer'
+    postMeta.appendChild(postFooter)
     
+
 
     let container = document.getElementById('container')
     container.appendChild(post)
