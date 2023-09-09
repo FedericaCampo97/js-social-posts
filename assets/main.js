@@ -55,3 +55,21 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+
+
+posts.forEach(element => {
+    let idPost = element.id
+    let postText = element.content
+    let postMedia = element.media
+    let authorName = element.author.name 
+    let authorImage = element.author.image
+    let numberLikes = element.likes
+    let dateCreated = element.created
+
+    let post = document.createElement('div')
+    post.className = "post"
+    console.log(post)
+
+})
