@@ -89,11 +89,27 @@ posts.forEach(element => {
     postIcon.className = 'post-meta__icon'
     postMeta.appendChild(postIcon)
 
-    let profilePhoto = document.createElement('img')
-    profilePhoto.className = 'profile-pic'
-    profilePhoto.src = authorImage
-    postIcon.appendChild(profilePhoto)
+    //inizio condizione
+    if (authorImage) {
+        let profilePhoto = document.createElement('img')
+        profilePhoto.className = 'profile-pic'
+        profilePhoto.src = authorImage
+        postIcon.appendChild(profilePhoto)
+    } else {
+        //altrimenti senza foto
+        let imgNone = document.createElement('div')
+        let authorSplit = authorName.split(' ')
+        console.log(authorSplit)
+        let initials = ''
+        authorSplit.forEach(element => {
+            initials += element.charAt(0)
+        });
+        imgNone.append(initials)
+        imgNone.className = 'no-profile-pic'
+        postIcon.appendChild(imgNone)
 
+    }
+    
     let datePublication = document.createElement('div')
     datePublication.className = 'post-meta__data'
  

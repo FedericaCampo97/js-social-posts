@@ -124,3 +124,17 @@ h1 {
     color: #0CD977;
     cursor: default;
 }
+.no-profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fac248bd;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    color: #023047;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
