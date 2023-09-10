@@ -137,21 +137,23 @@ posts.forEach(element => {
     likesCta.className = 'likes__cta'
     likeJs.appendChild(likesCta)
 
-    let likeButton = document.createElement('div')
+    let likeButton = document.createElement('a')
     likeButton.className = 'like-button  js-like-button'
+    likeButton.setAttribute('data-postid', idPost)
     likesCta.appendChild(likeButton)
-
+    
     let likeButtonIcon = document.createElement('i')
     likeButtonIcon.className = 'like-button__icon fas fa-thumbs-up'
     likeButton.appendChild(likeButtonIcon)
 
     let likeButtonLable = document.createElement('span')
     likeButtonLable.className = 'like-button__label'
-    likeButtonLable.append('Mi Piace')
+    likeButtonLable.append(' Mi Piace')
     likeButton.appendChild(likeButtonLable)
 
     let jsLikeCounter = document.createElement('b')
     jsLikeCounter.className = 'js-likes-counter'
+    jsLikeCounter.setAttribute('id', 'like-counter-' + idPost)
     jsLikeCounter.append(numberLikes)
 
     let likeCounter = document.createElement('div')
@@ -161,6 +163,18 @@ posts.forEach(element => {
     likeCounter.append(' persone')
     
     likeJs.appendChild(likeCounter)
+
+    //Funzione al click
+    likeButton.addEventListener('click' , function(){
+        //cambio colore
+        likeButtonIcon.style.color = 'red'
+        likeButtonLable.style.color = 'red'
+        //aumento il numero di like
+        jsLikeCounter.innerHTML = numberLikes + 1
+    })
+
+
+
 
     
 
